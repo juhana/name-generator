@@ -38,13 +38,13 @@ Try the <a href="http://www.ifcomp.org/">IFComp</a> editions:
 <select name="ifcomp" id="ifcomp-selection" class="form-control">
 <option></option>
 <?php
-for( $loop = key( $comps ); $loop <= end( (array_keys( $comps )) ); ++$loop ) {
+for( $loop = 1995; $loop <= end( (array_keys( $comps )) ); ++$loop ) {
 ?>
     <option value="<?php echo $loop; ?>"<?php if( $compEdition == $loop ) { echo ' selected'; } ?>><?php echo $loop; ?></option>
 <?php
 }
 ?>
-<option value="all">All IFComps</option>
+<option value="all"<?php if( $compEdition == 'all' ) { echo ' selected'; } ?>>All IFComps</option>
 </select>
 <button type="submit" class="btn btn-primary" id="ifcomp-go">Go</button>
 </p>
