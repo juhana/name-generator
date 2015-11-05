@@ -1,0 +1,13 @@
+Version 4 (2015-11-06):
+ - Refactoring
+ - Updated the game list
+ - Added API and JSON, JSONP and text formats
+ - Invalid parameters sends a 400 error code
+
+Version 3 (2009-10-17):
+ - Added all the previous IFComps and mashing only between comp names
+
+Version 2:
+ - Made it so that the first part can't be "the", "a" or "an" alone
+ - Added a debug command to see where the title is split (append ?debug at the end of the url to see it)
+ - Minor adjustments to the site layout
