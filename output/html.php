@@ -22,14 +22,16 @@ if( $error ) {
 
 <div class="container">
 <p>
-Below is a list of <?php echo $n ?> randomized IF
+Below is a<?php if( $n > 1 ) {
+    echo " list of " . $n;
+} ?> randomized IF
 title<?php if( $n > 1 ) { echo 's'; } ?> created by
-joining the beginning and end parts of two random existing titles.
+joining the beginning and end parts of random existing titles.
 </p>
 
 <p>
-Click on the titles to read randomly generated reviews.
-Reload the page to get a new set of names.
+Click on the title<?php if( $n > 1 ) { echo 's'; } ?> to read randomly generated reviews.
+Reload the page to get a new <?php if( $n > 1 ) { echo 'set of titles'; } else { echo 'title'; } ?>.
 </p>
 
 <form action="" method="get" id="ifcomp-form" class="form-inline">
