@@ -6,7 +6,8 @@ body {
 li {
     font-family:monospace;
     list-style:none;
-    line-spacing:1.5em;
+    line-height:1.7em;
+    text-indent:-0.5em;
 }
 
 li a {
