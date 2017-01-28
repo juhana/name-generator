@@ -11,7 +11,8 @@ works just as well for any titles.
 The original generator and algorithm was created by David Fisher, who was 
 inspired by the [Video Game Name Generator](http://videogamena.me) and extracted 
 the name list from Baf's Guide (see the [rec.arts.int-fiction thread](http://groups.google.fi/group/rec.arts.int-fiction/browse_thread/thread/4428f0f75e24abe1/)).
-The current list is from the [IFDB database dump](http://ifarchive.org/indexes/if-archiveXinfoXifdb.html) (July 2015).
+The current list is from the [IFDB database dump](http://ifarchive.org/indexes/if-archiveXinfoXifdb.html)
+(January 2017).
 
 The name generator is online at http://nitku.net/if/namegenerator.
 
@@ -31,7 +32,7 @@ Default is `html`.
 **`n`**: The amount of names to return. Must be between 1 and 500. Default is 40.
 
 **`ifcomp`**: If supplied, every title has at least one part taken from the
-given [IFComp](http://ifcomp.org) year's titles. Must be between 1995 and 2015. 
+given [IFComp](http://ifcomp.org) year's titles. Must be between 1995 and 2016. 
 
 Example: 
 
@@ -44,4 +45,4 @@ requests are possible.
 
 The API doesn't have a hard request limit, but if you plan on using it in a way
 that puts considerable stress on the server, please discuss it beforehand or
-consider installing the script to your own server. Excess usage can cause an IP block. 
+consider installing the script to your own server. Excess usage can cause an IP block.

@@ -8,7 +8,7 @@ define( 'MAX_NAMES_TO_PRINT', 500 );
 
 $OUTPUT_FORMATS = array( 'html', 'json', 'txt' );
 
-if( !empty( $_GET[ 'n' ] ) || $_GET[ 'n' ] === '0' ) {
+if( isset( $_GET[ 'n' ] ) && ( !empty( $_GET[ 'n' ] ) || $_GET[ 'n' ] === '0' ) ) {
 	$n = intval( $_GET[ 'n' ] );
 }
 else {
@@ -18,7 +18,7 @@ else {
 $error = false;
 
 if( $n < 1 || $n > MAX_NAMES_TO_PRINT ) {
-    $error = "Number of names must be between 1 and " . MAX_NAMES_TO_PRINT . '.';
+    $error = "Number of titles must be between 1 and " . MAX_NAMES_TO_PRINT . '.';
 }
 
 if( empty( $_GET[ 'format' ] ) ) {
@@ -41,17 +41,19 @@ if( !$error ) {
 
     $compEdition = $_GET[ 'ifcomp' ];
 
-    switch( $_GET[ 'edition' ] )
+    if( isset( $_GET[ 'edition' ] ) )
     {
-    // for backwards compatibility with old links
-    case 'comp08':
-        $compEdition = 2008;
-    break;
+        switch( $_GET[ 'edition' ] )
+        {
+            // for backwards compatibility with old links
+            case 'comp08':
+                $compEdition = 2008;
+            break;
 
-    case 'comp09':
-        $compEdition = 2009;
-    break;
-
+            case 'comp09':
+                $compEdition = 2009;
+            break;
+        }
     }
 
     if( isset( $comps[ $compEdition ] ) )
