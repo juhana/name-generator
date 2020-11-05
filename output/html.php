@@ -30,7 +30,6 @@ joining the beginning and end parts of random existing titles.
 </p>
 
 <p>
-Click on the title<?php if( $n > 1 ) { echo 's'; } ?> to read randomly generated reviews.
 Reload the page to get a new <?php if( $n > 1 ) { echo 'set of titles'; } else { echo 'title'; } ?>.
 </p>
 
@@ -40,9 +39,10 @@ Try the <a href="http://www.ifcomp.org/">IFComp</a> editions:
 <select name="ifcomp" id="ifcomp-selection" class="form-control">
 <option></option>
 <?php
-for( $loop = 1995; $loop <= end( (array_keys( $comps )) ); ++$loop ) {
+$years = array_keys( $comps );
+foreach( $years as $year ) {
 ?>
-    <option value="<?php echo $loop; ?>"<?php if( $compEdition == $loop ) { echo ' selected'; } ?>><?php echo $loop; ?></option>
+    <option value="<?php echo $year; ?>"<?php if( $compEdition == $year ) { echo ' selected'; } ?>><?php echo $year; ?></option>
 <?php
 }
 ?>
@@ -62,9 +62,9 @@ for( $loop = 1995; $loop <= end( (array_keys( $comps )) ); ++$loop ) {
 <ul id="list">
 <?php
 for( $i = 0; $i < count( $generatedNames ); ++$i ) {
-    echo '<li><a href="http://nitku.net/if/reviewgenerator/index.php?name='.urlencode( $generatedNames[ $i ] ).'" rel="nofollow">';
+    echo '<li>';
     echo $generatedNames[ $i ];
-	echo "</a></li>\n";
+	echo "</li>\n";
 }
 ?>
 </ul>

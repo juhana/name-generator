@@ -32,7 +32,8 @@ if( array_search( $format, $OUTPUT_FORMATS ) === false ) {
     $error = "Unknown output format '" . htmlspecialchars( $format ) . "'. Available formats: " . implode( $OUTPUT_FORMATS, ', ' );
 }
 
-require_once( 'names.php' );
+require_once( 'data/games.php' );
+require_once( 'data/comps.php' );
 
 if( !$error ) {
     if( $format === 'html' ) {
@@ -63,12 +64,12 @@ if( !$error ) {
 
     if( $compEdition == 'all' )
     {
-        $names = array();
+        $games = array();
 
         foreach( $comps as $compArray )
         {
-            $newNames = array_merge( $names, $compArray );
-            $names = $newNames;
+            $newNames = array_merge( $games, $compArray );
+            $games = $newNames;
         }
     }
 
@@ -78,13 +79,13 @@ if( !$error ) {
     {
         do
         {
-            $source = array_rand( $names, 2 );
+            $source = array_rand( $games, 2 );
 
             if( empty( $specialArray ) )
             {
                 // no "special edition" selected, just pick two names
-                $prefix = explode( ' ', $names[ $source[ 0 ] ] );
-                $suffix = explode( ' ', $names[ $source[ 1 ] ] );
+                $prefix = explode( ' ', $games[ $source[ 0 ] ] );
+                $suffix = explode( ' ', $games[ $source[ 1 ] ] );
             }
             else
             {
@@ -93,12 +94,12 @@ if( !$error ) {
                 if( rand( 0, 1 ) )
                 {
                     $prefix = explode( ' ', $specialArray[ rand( 0, count( $specialArray ) - 1 ) ] );
-                    $suffix = explode( ' ', $names[ $source[ 1 ] ] );
+                    $suffix = explode( ' ', $games[ $source[ 1 ] ] );
                 }
                 else
                 {
 
-                    $prefix = explode( ' ', $names[ $source[ 0 ] ] );
+                    $prefix = explode( ' ', $games[ $source[ 0 ] ] );
                     $suffix = explode( ' ', $specialArray[ rand( 0, count( $specialArray ) - 1 ) ] );
                 }
             }

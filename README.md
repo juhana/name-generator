@@ -11,10 +11,10 @@ works just as well for any titles.
 The original generator and algorithm was created by David Fisher, who was 
 inspired by the [Video Game Name Generator](http://videogamena.me) and extracted 
 the name list from Baf's Guide (see the [rec.arts.int-fiction thread](http://groups.google.fi/group/rec.arts.int-fiction/browse_thread/thread/4428f0f75e24abe1/)).
-The current list is from the [IFDB database dump](http://ifarchive.org/indexes/if-archiveXinfoXifdb.html)
-(January 2017).
+The current list is from the [IFDB database dump](http://ifarchive.org/indexes/if-archive/info/ifdb/)
+(October 2020).
 
-The name generator is online at http://nitku.net/if/namegenerator.
+The name generator is online at https://nitku.net/if/namegenerator.
 
 
 API
@@ -22,7 +22,7 @@ API
 
 The list of names can also be requested as JSON or plain text.
  
-Send a GET request to `http://nitku.net/if/namegenerator/` with any of the
+Send a GET request to `https://nitku.net/if/namegenerator/` with any of the
 following parameters:
 
 **`format`**: Either `html`, `txt`, `json` or `jsonp`. If the format is `jsonp`, 
@@ -32,7 +32,7 @@ Default is `html`.
 **`n`**: The amount of names to return. Must be between 1 and 500. Default is 40.
 
 **`ifcomp`**: If supplied, every title has at least one part taken from the
-given [IFComp](http://ifcomp.org) year's titles. Must be between 1995 and 2016. 
+given [IFComp](http://ifcomp.org) year's titles. Must be between 1995 and 2020. 
 
 Example: 
 
