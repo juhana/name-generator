@@ -25,9 +25,7 @@ The list of names can also be requested as JSON or plain text.
 Send a GET request to `https://nitku.net/if/namegenerator/` with any of the
 following parameters:
 
-**`format`**: Either `html`, `txt`, `json` or `jsonp`. If the format is `jsonp`, 
-a `callback` parameter must be supplied, otherwise a JSON response is returned.
-Default is `html`.
+**`format`**: Either `html`, `txt` or `json`. Default is `html`.
 
 **`n`**: The amount of names to return. Must be between 1 and 500. Default is 40.
 
@@ -37,7 +35,7 @@ given [IFComp](http://ifcomp.org) year's titles. Must be between 1995 and 2020.
 Example: 
 
 ```
-http://nitku.net/if/namegenerator/?format=json&n=50&ifcomp=2015
+https://nitku.net/if/namegenerator/?format=json&n=50&ifcomp=2015
 ```
 
 The server has `Access-Control-Allow-Origin: *` header set so cross-origin

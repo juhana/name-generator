@@ -29,7 +29,8 @@ else {
 }
 
 if( array_search( $format, $OUTPUT_FORMATS ) === false ) {
-    $error = "Unknown output format '" . htmlspecialchars( $format ) . "'. Available formats: " . implode( $OUTPUT_FORMATS, ', ' );
+    header( $_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request', true, 400 );
+    die( "Unknown output format '" . htmlspecialchars( $format ) . "'. Available formats: " . implode( $OUTPUT_FORMATS, ', ' ) );
 }
 
 require_once( 'data/games.php' );
